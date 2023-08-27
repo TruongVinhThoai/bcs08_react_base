@@ -1,0 +1,4 @@
++ Component: ClassComponent, FunctionComponent
++ DataBinding: đưa data lên layout
++ RenderWithMap: Convert array data thanh array html css
++ State: quan ly cac data anh huong den layout, state se tu dong theo doi va render lai layout neu du lieu nay co update.

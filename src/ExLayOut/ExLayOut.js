@@ -24,3 +24,6 @@ export default class ExLayOut extends Component {
     );
   }
 }
+
+// npm start
+// sau khi clone source => npm i
