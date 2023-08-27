@@ -39,9 +39,10 @@ export default class DemoState extends Component {
         </button>
         {/* Toan tu 3 ngoi */}
         <h2
-          className={
-            this.state.username == "Alice" ? "text-primary" : "text-secondary"
-          }
+          className={`display-4
+            ${
+              this.state.username == "Alice" ? "text-primary" : "text-secondary"
+            }`}
         >
           {this.state.username}
         </h2>
