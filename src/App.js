@@ -12,6 +12,8 @@ import Ex_Car_v2 from "./Ex_Car_v2/Ex_Car_v2";
 import Ex_Car_v3 from "./Ex_Car_v3/Ex_Car_v3";
 import Ex_Car_v4 from "./Ex_Car_v4/Ex_Car_v4";
 import Ex_Shoe from "./Ex_Shoe/Ex_Shoe";
+import DemoRedux from "./DemoRedux/DemoRedux";
+import Ex_Shoe_Redux from "./Ex_Shoe_Redux/Ex_Shoe_Redux";
 
 function App() {
   return (
@@ -30,7 +32,11 @@ function App() {
       {/* <Ex_Car_v2 /> */}
       {/* {<Ex_Car_v3 />} */}
       {/* <Ex_Car_v4 /> */}
-      <Ex_Shoe />
+      {/* --- day 4 --- */}
+      {/* <Ex_Shoe /> */}
+      {/* --- day 5 --- */}
+      {/* <DemoRedux /> */}
+      <Ex_Shoe_Redux />
     </div>
     // jsx: html+js
   );
