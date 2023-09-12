@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { ADD_TO_CART, VIEW_DETAIL } from "./constant/shoeConstant";
 
-export default class ItemShoe extends Component {
+class ItemShoe extends Component {
   render() {
     let { image, name } = this.props.item;
     return (
@@ -12,15 +14,41 @@ export default class ItemShoe extends Component {
             <button
               className="btn btn-primary mr-2"
               onClick={() => {
-                this.props.handleAddListShoe(this.props.item);
+                this.props.handleAddShoe(this.props.item);
               }}
             >
               Add
             </button>
-            <button className="btn btn-info">View</button>
+            <button
+              className="btn btn-info"
+              onClick={() => {
+                this.props.handleViewDetail(this.props.item);
+              }}
+            >
+              View
+            </button>
           </p>
         </div>
       </div>
     );
   }
 }
+let mapDispatchToProps = (dispatch) => {
+  return {
+    handleViewDetail: (shoe) => {
+      let action = {
+        type: VIEW_DETAIL,
+        payload: shoe,
+      };
+      dispatch(action);
+    },
+    handleAddShoe: (shoe) => {
+      let action = {
+        type: ADD_TO_CART,
+        payload: shoe,
+      };
+      dispatch(action);
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(ItemShoe);

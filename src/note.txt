@@ -8,3 +8,6 @@
 + reducer: noi viet logic update data cua redux
 
 + mapStateToProps: lay data tu redux dua ve component duoi dang props
+
++ rcredux - phim tat
++ rxconst - phim tat

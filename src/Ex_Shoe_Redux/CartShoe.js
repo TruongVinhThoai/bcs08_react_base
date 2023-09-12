@@ -1,8 +1,10 @@
 import { tr } from "@faker-js/faker";
 import React, { Component } from "react";
 import { GIAM_SO_LUONG, TANG_SO_LUONG } from "./Data";
+import { connect } from "react-redux";
+import { UPDATE_QUANTITY } from "./constant/shoeConstant";
 
-export default class CartShoe extends Component {
+class CartShoe extends Component {
   renderCart = () => {
     let { cart } = this.props;
     return cart.map((item, index) => {
@@ -17,7 +19,7 @@ export default class CartShoe extends Component {
           <td>
             <button
               onClick={() => {
-                this.props.handleChangeQuantityShoe(id, GIAM_SO_LUONG);
+                this.props.handleUpdateQuantity(id, GIAM_SO_LUONG);
               }}
               className="btn btn-secondary"
             >
@@ -26,7 +28,7 @@ export default class CartShoe extends Component {
             <strong className="mx-3">{soLuong}</strong>
             <button
               onClick={() => {
-                this.props.handleChangeQuantityShoe(id, TANG_SO_LUONG);
+                this.props.handleUpdateQuantity(id, TANG_SO_LUONG);
               }}
               className="btn btn-success"
             >
@@ -63,3 +65,22 @@ export default class CartShoe extends Component {
     );
   }
 }
+let mapStateToProps = (state) => {
+  return {
+    cart: state.shoeReducer.cart,
+  };
+};
+
+let mapDisPatchToProps = (dispatch) => {
+  return {
+    handleUpdateQuantity: (id, option) => {
+      let action = {
+        type: UPDATE_QUANTITY,
+        payload: { id, option },
+      };
+      dispatch(action);
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDisPatchToProps)(CartShoe);

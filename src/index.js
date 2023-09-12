@@ -5,13 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-// import { numberReducer } from "./DemoRedux/Redux/reducer/numberReducer";
+import { numberReducer } from "./DemoRedux/Redux/reducer/numberReducer";
 import { shoeReducer } from "./Ex_Shoe_Redux/reducer/shoeReducer";
 import { rootReducer } from "./Ex_Shoe_Redux/reducer/rootReducer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 let store = createStore(
+  // numberReducer,
   // shoeReducer,
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
